@@ -1,0 +1,152 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row justify-content-center align-items-center" style="min-height:80vh;">
+
+    <div class="col-md-6 col-lg-5">
+
+        <div class="card glass-card border-0 shadow-lg p-4 p-md-5">
+
+            <!-- Header -->
+            <div class="text-center mb-4">
+
+                <div class="mb-3">
+                    <i class="bi bi-person-plus-fill text-success" style="font-size:4rem;"></i>
+                </div>
+
+                <h2 class="fw-bold text-white">
+                    Join StartupHub
+                </h2>
+
+                <p class="text-white">
+                    Create your profile and connect with startups and innovators.
+                </p>
+
+            </div>
+
+
+            <!-- Registration Form -->
+            <form method="POST">
+
+                <!-- Full Name -->
+                <div class="mb-3">
+                    <label class="form-label text-white">
+                        FULL NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        class="form-control form-control-lg rounded-3"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label class="form-label text-white">
+                        EMAIL ADDRESS
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control form-control-lg rounded-3"
+                        placeholder="example@gmail.com"
+                        required>
+                </div>
+
+
+                <!-- Password -->
+                <div class="mb-4">
+                    <label class="form-label text-white">
+                        PASSWORD
+                    </label>
+
+                    <div class="input-group">
+
+                        <input
+                            type="password"
+                            name="password"
+                            class="form-control form-control-lg rounded-start-3"
+                            id="password"
+                            placeholder="Create a strong password"
+                            required>
+
+                        <button
+                            class="btn btn-outline-secondary"
+                            type="button"
+                            onclick="togglePassword()">
+
+                            <i class="bi bi-eye" id="eyeIcon"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Register Button -->
+                <button
+                    type="submit"
+                    class="btn btn-success w-100 btn-lg rounded-3">
+
+                    <i class="bi bi-rocket-takeoff me-2"></i>
+                    Create Account
+
+                </button>
+
+            </form>
+
+
+            <!-- Login Link -->
+            <div class="text-center mt-4">
+
+                <p class="text-white">
+
+                    Already have an account?
+
+                    <a href="{{ url_for('login') }}"
+                       class="text-info text-decoration-none fw-bold">
+
+                        Login here
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function togglePassword()
+{
+    let password = document.getElementById("password");
+    let icon = document.getElementById("eyeIcon");
+
+    if(password.type === "password")
+    {
+        password.type = "text";
+        icon.className = "bi bi-eye-slash";
+    }
+    else
+    {
+        password.type = "password";
+        icon.className = "bi bi-eye";
+    }
+}
+
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Welcome Section -->
+<div class="mb-5">
+
+    <h2 class="fw-bold text-white">
+        Welcome,
+        <span class="text-success">{{ session['user_name'] }}</span>
+    </h2>
+
+    <p class="text-white">
+        Manage your projects, discover startups, and grow your professional network.
+    </p>
+
+</div>
+
+
+<!-- Statistics -->
+<div class="row g-4 mb-5">
+
+    <div class="col-md-4">
+
+        <div class="card glass-card border-0 p-4 text-center">
+
+            <i class="bi bi-folder-fill text-success fs-1"></i>
+
+            <h3 class="text-white mt-3">
+                {{ projects|length }}
+            </h3>
+
+            <p class="text-white">
+                Total Projects
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card glass-card border-0 p-4 text-center">
+
+            <i class="bi bi-rocket-takeoff-fill text-info fs-1"></i>
+
+            <h3 class="text-white mt-3">
+                Active
+            </h3>
+
+            <p class="text-white">
+                Startup Ecosystem
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card glass-card border-0 p-4 text-center">
+
+            <i class="bi bi-person-workspace text-warning fs-1"></i>
+
+            <h3 class="text-white mt-3">
+                Profile
+            </h3>
+
+            <p class="text-white">
+                Ready for Opportunities
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="row g-4">
+
+    <!-- Quick Actions -->
+    <div class="col-lg-4">
+
+        <div class="card glass-card border-0 p-4 h-100">
+
+            <h4 class="fw-bold text-info mb-4">
+
+                <i class="bi bi-lightning-charge-fill me-2"></i>
+
+                Quick Actions
+
+            </h4>
+
+
+            <div class="d-grid gap-3">
+
+                <a href="{{ url_for('add_project') }}"
+                   class="btn btn-outline-success btn-lg text-start">
+
+                    <i class="bi bi-plus-circle me-2"></i>
+
+                    Add Project
+
+                </a>
+
+
+                <a href="{{ url_for('startups') }}"
+                   class="btn btn-outline-info btn-lg text-start">
+
+                    <i class="bi bi-search me-2"></i>
+
+                    Explore Startups
+
+                </a>
+
+
+                <a href="{{ url_for('profile') }}"
+                   class="btn btn-outline-warning btn-lg text-start">
+
+                    <i class="bi bi-person-circle me-2"></i>
+
+                    My Profile
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Projects -->
+    <div class="col-lg-8">
+
+        <div class="card glass-card border-0 p-4 h-100">
+
+            <h4 class="fw-bold text-success mb-4">
+
+                <i class="bi bi-code-square me-2"></i>
+
+                My Projects
+
+            </h4>
+
+
+            {% if projects %}
+
+                <div class="list-group list-group-flush">
+
+                    {% for project in projects %}
+
+                    <div class="list-group-item bg-transparent border-secondary py-3">
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div>
+
+                                <h5 class="text-white mb-1">
+                                    {{ project.title }}
+                                </h5>
+
+                                <small class="text-white">
+                                    Project Technology
+                                </small>
+
+                            </div>
+
+                            <span class="badge bg-success fs-6 px-3 py-2">
+
+                                {{ project.technology }}
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="text-center py-5">
+
+                    <i class="bi bi-folder-x text-secondary"
+                       style="font-size:4rem;"></i>
+
+                    <h4 class="text-white mt-3">
+                        No Projects Yet
+                    </h4>
+
+                    <p class="text-white">
+
+                        Start building your portfolio by adding your first project.
+
+                    </p>
+
+                    <a href="{{ url_for('add_project') }}"
+                       class="btn btn-success mt-3">
+
+                        <i class="bi bi-plus-circle me-2"></i>
+
+                        Add Project
+
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

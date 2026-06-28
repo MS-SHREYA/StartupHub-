@@ -1,0 +1,134 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<div class="text-center py-5 my-5 glass-card position-relative overflow-hidden p-5 border-0">
+
+    <div class="position-absolute top-0 start-50 translate-middle"
+         style="width:400px;height:400px;
+         background:radial-gradient(circle,
+         rgba(16,185,129,0.12) 0%,
+         rgba(0,0,0,0) 70%);
+         z-index:0;">
+    </div>
+
+    <div class="position-relative" style="z-index:1;">
+        <span class="badge rounded-pill bg-dark border border-secondary text-info px-3 py-2 mb-3">
+            NEXT-GEN BUILDER HUB
+        </span>
+
+        <h1 class="display-3 fw-bold text-white mb-3">
+            Where Code Meets Capital
+        </h1>
+
+        <p class="col-md-8 mx-auto fs-5 text-white">
+            Connect talented developers, innovative startups and visionary founders
+            on one platform. Showcase your skills, discover opportunities and build
+            the future together.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{{ url_for('register') }}"
+               class="btn btn-success btn-lg px-5 py-3 rounded-3 shadow">
+                Get Started
+            </a>
+
+            <a href="{{ url_for('login') }}"
+               class="btn btn-outline-light btn-lg px-5 py-3 rounded-3">
+                Login
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- FEATURES SECTION -->
+<section class="py-5">
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="glass-card p-4 h-100 text-center">
+                <i class="bi bi-person-workspace fs-1 text-success"></i>
+                <h4 class="text-white mt-3">Build Your Profile</h4>
+                <p class="text-white">
+                    Showcase projects, skills, certifications and experiences.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="glass-card p-4 h-100 text-center">
+                <i class="bi bi-lightbulb fs-1 text-warning"></i>
+                <h4 class="text-white mt-3">Find Startups</h4>
+                <p class="text-white">
+                    Discover emerging startups and exciting opportunities.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="glass-card p-4 h-100 text-center">
+                <i class="bi bi-rocket-takeoff fs-1 text-info"></i>
+                <h4 class="text-white mt-3">Launch Together</h4>
+                <p class="text-white">
+                    Collaborate with founders and bring ideas into reality.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- STATS SECTION -->
+<section class="py-5">
+    <div class="row text-center">
+
+        <div class="col-md-3 mb-4">
+            <h1 class="text-success fw-bold">500+</h1>
+            <p class="text-white">Developers</p>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <h1 class="text-info fw-bold">100+</h1>
+            <p class="text-white">Startups</p>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <h1 class="text-warning fw-bold">200+</h1>
+            <p class="text-white">Projects</p>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <h1 class="text-danger fw-bold">50+</h1>
+            <p class="text-white">Investors</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CALL TO ACTION -->
+<div class="glass-card p-5 text-center my-5">
+
+    <h2 class="text-white mb-3">
+        Ready to Build Something Amazing?
+    </h2>
+
+    <p class="text-white mb-4">
+        Join thousands of developers and startup founders already building
+        the next generation of technology.
+    </p>
+
+    <a href="{{ url_for('register') }}"
+       class="btn btn-success btn-lg px-5">
+        Join StartupHub
+    </a>
+
+</div>
+
+{% endblock %}
+

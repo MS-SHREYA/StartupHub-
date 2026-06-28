@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8 col-md-10">
+
+        <div class="card glass-card border-0 shadow-lg p-4 p-md-5">
+
+            <!-- Header -->
+            <div class="text-center mb-4">
+
+                <i class="bi bi-rocket-takeoff-fill text-success"
+                   style="font-size:4rem;"></i>
+
+                <h2 class="text-white fw-bold mt-3">
+                    Add New Project
+                </h2>
+
+                <p class="text-white">
+                    Showcase your work and attract startups, recruiters, and collaborators.
+                </p>
+
+            </div>
+
+
+            <!-- Form -->
+            <form method="POST">
+
+                <!-- Project Title -->
+                <div class="mb-4">
+
+                    <label class="form-label text-white fw-semibold">
+
+                        <i class="bi bi-folder-fill me-2"></i>
+
+                        PROJECT TITLE
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="title"
+                        class="form-control form-control-lg rounded-3"
+                        placeholder="Heart Disease Prediction System"
+                        required>
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="mb-4">
+
+                    <label class="form-label text-white fw-semibold">
+
+                        <i class="bi bi-file-text me-2"></i>
+
+                        PROJECT DESCRIPTION
+
+                    </label>
+
+                    <textarea
+                        name="description"
+                        rows="5"
+                        class="form-control rounded-3"
+                        placeholder="Briefly describe your project, objectives, and features..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- Technology Stack -->
+                <div class="mb-4">
+
+                    <label class="form-label text-white fw-semibold">
+
+                        <i class="bi bi-code-slash me-2"></i>
+
+                        TECHNOLOGIES USED
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="technology"
+                        class="form-control form-control-lg rounded-3"
+                        placeholder="Python, Flask, MySQL, Bootstrap"
+                        required>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="row mt-4">
+
+                    <div class="col-md-6 mb-3">
+
+                        <button
+                            type="submit"
+                            class="btn btn-success btn-lg w-100">
+
+                            <i class="bi bi-cloud-upload me-2"></i>
+
+                            Publish Project
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <a href="{{ url_for('dashboard') }}"
+                           class="btn btn-outline-secondary btn-lg w-100">
+
+                            <i class="bi bi-arrow-left me-2"></i>
+
+                            Back to Dashboard
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

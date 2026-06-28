@@ -1,0 +1,158 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-7 col-md-9">
+
+        <div class="card glass-card border-0 shadow-lg p-4 p-md-5">
+
+            <!-- Header -->
+            <div class="text-center mb-4">
+
+                <i class="bi bi-person-gear text-warning"
+                   style="font-size:4rem;"></i>
+
+                <h2 class="text-white fw-bold mt-3">
+                    Edit Profile
+                </h2>
+
+                <p class="text-white">
+                    Update your skills and social links to attract startups and collaborators.
+                </p>
+
+            </div>
+
+
+            <!-- Form -->
+            <form method="POST">
+
+                <!-- Skill -->
+                <div class="mb-4">
+
+                    <label class="form-label text-white">
+
+                        <i class="bi bi-stars me-2"></i>
+
+                        PRIMARY TECHNICAL SKILL
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="skill"
+                        value="{{ user.skill or '' }}"
+                        class="form-control form-control-lg rounded-3"
+                        placeholder="Python, React, Java, Flutter..."
+                    >
+
+                </div>
+
+
+                <!-- Bio -->
+                <div class="mb-4">
+
+                    <label class="form-label text-white">
+
+                        <i class="bi bi-file-text me-2"></i>
+
+                        BIO
+
+                    </label>
+
+                    <textarea
+                        name="bio"
+                        rows="4"
+                        class="form-control rounded-3"
+                        placeholder="Tell others about yourself...">{{ user.bio or '' }}</textarea>
+
+                </div>
+
+
+                <!-- GitHub -->
+                <div class="mb-4">
+
+                    <label class="form-label text-white">
+
+                        <i class="bi bi-github me-2"></i>
+
+                        GITHUB URL
+
+                    </label>
+
+                    <input
+                        type="url"
+                        name="github"
+                        value="{{ user.github or '' }}"
+                        class="form-control form-control-lg rounded-3"
+                        placeholder="https://github.com/username"
+                    >
+
+                </div>
+
+
+                <!-- LinkedIn -->
+                <div class="mb-4">
+
+                    <label class="form-label text-white">
+
+                        <i class="bi bi-linkedin me-2"></i>
+
+                        LINKEDIN URL
+
+                    </label>
+
+                    <input
+                        type="url"
+                        name="linkedin"
+                        value="{{ user.linkedin or '' }}"
+                        class="form-control form-control-lg rounded-3"
+                        placeholder="https://linkedin.com/in/username"
+                    >
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="row mt-4">
+
+                    <div class="col-md-6 mb-3">
+
+                        <button
+                            type="submit"
+                            class="btn btn-success btn-lg w-100">
+
+                            <i class="bi bi-check-circle me-2"></i>
+
+                            Save Changes
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <a href="{{ url_for('profile') }}"
+                           class="btn btn-outline-secondary btn-lg w-100">
+
+                            <i class="bi bi-arrow-left me-2"></i>
+
+                            Back to Profile
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
