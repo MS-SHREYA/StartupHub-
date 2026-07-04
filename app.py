@@ -8,9 +8,11 @@ app.secret_key = "startuphub123"
 
 # ---------------- DATABASE CONNECTION ----------------
 
-client = MongoClient("mongodb://localhost:27017/")
-db = client["startuphub"]
+MONGO_URI = "mongodb+srv://sujithak2020_db_user:MCMsX0ct2dCyiLPE@cluster0.mucs16r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
+client = MongoClient(MONGO_URI)
+
+db = client["startuphub"]
 users_collection = db["users"]
 projects_collection = db["projects"]
 startups_collection = db["startups"]
